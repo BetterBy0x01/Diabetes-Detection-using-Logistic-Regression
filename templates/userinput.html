@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ url_for('static',filename = 'icon.png') }}" type="image/icon type">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/txt6qtg.css">
+    <script>
+        function updateTextBox1(val) {
+            document.getElementById('slider1').value = val;
+        }
+        function updateTextBox2(val) {
+            document.getElementById('slider2').value = val;
+        }
+        function updateTextBox3(val) {
+            document.getElementById('slider3').value = val;
+        }
+        function updateTextBox4(val) {
+            document.getElementById('slider4').value = val;
+        }
+        function updateTextBox5(val) {
+            document.getElementById('slider5').value = val;
+        }
+        function updateTextBox6(val) {
+            document.getElementById('slider6').value = val;
+        }
+    </script>
+    <style>
+        @media only screen and (min-width: 1080px) {
+            .nav_space {
+                margin-left: 55%;
+            }
+        }
+
+        .font_heading {
+            font-family: raleway, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            color: #D72638;
+        }
+
+        .img {
+            height: 64px;
+            width: 64px;
+        }
+
+        #logo {
+            padding-top: 300px;
+            padding-bottom: 25px;
+            background-size: cover;
+            font-family: raleway, sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .text {
+            color: white;
+            vertical-align: middle;
+            display: flex;
+            justify-content: center;
+        }
+
+        .bgnav {
+            display: flex;
+            background-size: cover;
+            background-image: url(login.png);
+        }
+
+        .button_padding {
+            min-width: 150px;
+        }
+
+        .padding {
+            margin-left: 12%;
+            margin-right: 12%;
+        }
+
+        .font_body {
+            font-weight: 450;
+            font-family: sans-serif;
+            font-size: 15px;
+            text-align: left;
+            color: black;
+        }
+
+        .round_border {
+            border-radius: 50px;
+        }
+
+        .thin_borders {
+            border-width: 1px;
+            border-color: #CFD4D9;
+            text-align: center;
+            margin-left: 10px;
+            min-width: 95px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #011627;">
+        <a class="font navbar-brand col-sm-8" href="/">Diabetes Detection Web-App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about_diabetes">About Diabetes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/working">Working</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/userinput">Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/OurTeam">OurTeam</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-lg-12" style="padding-top: 80px; text-align: center;">
+            <h1 class="font_heading"
+                style="color: white; background-color: #D72638 ; padding-top: 7px; padding-bottom: 7px; margin-right: 7%; margin-left: 7%;">
+                <b>Test</b></h1>
+            <br>
+        </div>
+    </div>
+
+    <div class="row padding">
+        <div class="font_heading col-lg-12" style="text-align: center;">
+            <p style="font-size: 23px">Fill the Following form to the best of your knowledge:</p>
+        </div>
+    </div>
+
+    <form class="padding" method="POST" action="/userinput">
+        <div class="form-group">
+            <label>Number Of Pregnancies</label>
+            <input type="number" class="form-control round_border" min="0" max="17" name="pregnancies"
+                placeholder="Input or Choose">
+        </div>
+
+        <div class="form-group">
+            <label for="formControlRange">Choose Glucose Level using slider (0-199) </label>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Value displayed beside slider, use arrow keys for precision.
+            </small>
+            <div class="container row ">
+                <input type="range" class="form-control-range sliders col-sm-10" min="0" max="199" step="1"
+                    id="formControlRange1" onchange="updateTextBox1(this.value);"> <br>
+                <input type="number" name="glucose" min="0" max="199" class="round_border thin_borders col-sm-1"
+                    id="slider1" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="formControlRange">Choose Blood Pressure value using slider (0-122) </label>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Value displayed beside slider, use arrow keys for precision.
+            </small>
+            <div class="container row ">
+                <input type="range" class="form-control-range sliders col-sm-10" min="0" max="122" step="1"
+                    id="formControlRange2" onchange="updateTextBox2(this.value);"> <br>
+                <input type="number" name="blood_pressure" min="0" max="122" class="round_border thin_borders col-sm-1"
+                    id="slider2" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="formControlRange">Choose Skin Thickness value using slider (0-99) </label>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Value displayed beside slider, use arrow keys for precision.
+            </small>
+            <div class="container row ">
+                <input type="range" class="form-control-range sliders col-sm-10" min="0" max="99" step="1"
+                    id="formControlRange3" onchange="updateTextBox3(this.value);"> <br>
+                <input type="number" name="skin_thickness" min="0" max="99" class="round_border thin_borders col-sm-1"
+                    id="slider3" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="formControlRange">Choose Insulin value using slider (0-846) </label>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Value displayed beside slider, use arrow keys for precision.
+            </small>
+            <div class="container row ">
+                <input type="range" class="form-control-range sliders col-sm-10" min="0" max="846" step="1"
+                    id="formControlRange4" onchange="updateTextBox4(this.value);"> <br>
+                <input type="number" name="insulin" min="0" max="846" class="round_border thin_borders col-sm-1"
+                    id="slider4" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="formControlRange">Choose Body mass index (BMI) value using slider (0.0-67.1) </label>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Use this <a
+                    href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/english_bmi_calculator/bmi_calculator.html"
+                    target="_blank">link</a> to calculate your BMI value.
+                Value displayed beside slider, use arrow keys for precision.
+            </small>
+            <div class="container row ">
+                <input type="range" class="form-control-range sliders col-sm-10" min="0.0" max="67.1" step="0.1"
+                    id="formControlRange5" onchange="updateTextBox5(this.value);"> <br>
+                <input type="number" name="BMI" min="0.0" max="67.1" step="0.1"
+                    class="round_border thin_borders col-sm-1" id="slider5" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="formControlRange">Choose Diabetes Pedigree Function (DPF) value using slider (0.078-2.42)
+            </label>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                <!-- trigger modal -->
+                Use this <a href="" target="_blank" data-toggle="modal" data-target="#exampleModal">link</a> to
+                calculate your DPF value. Value displayed beside slider, use arrow keys for precision.
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Diabetes Pedigree Function</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="{{ url_for('static',filename = 'dpf_def.png') }}" alt="DPF definition" style="height: 80%; width: 80%">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                    style="border-radius: 50px;">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </small>
+            <div class="container row ">
+                <input type="range" class="form-control-range sliders col-sm-10" min="0.078" max="2.42" step="0.01"
+                    id="formControlRange6" onchange="updateTextBox6(this.value);"> <br>
+                <input type="number" name="DPF" min="0.078" max="2.42" step="0.01"
+                    class="round_border thin_borders col-sm-1" id="slider6" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Age: </label>
+            <input type="number" class="form-control round_border" min="21" max="81" name="age"
+                placeholder="Input or Choose">
+        </div>
+
+        <button type="submit" class="btn btn-success" style="border-radius: 50px; min-width: 150px;"
+            href="/home">Submit</button>
+    </form>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+        <link rel="icon" href="{{ url_for('static',filename = 'icon.png') }}" type="image/icon type">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.typekit.net/txt6qtg.css">
+        <style>
+        .font_heading
+        {
+          font-family: raleway,sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            color: #D72638; 
+        }
+        .font
+        {
+          font-family: raleway,sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+        #logo
+        {
+            padding-top: 300px;
+            padding-bottom: 25px;
+            background-size: cover;
+            font-family: raleway,sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+        .text
+        {
+            color: white; 
+            vertical-align: middle; 
+            display: flex; 
+            justify-content: center;
+        }
+        .bgnav
+        {
+          display: flex; 
+          background-size: cover;
+        }
+        .button_padding
+        {
+          min-width: 150px;
+          position:absolute;                  
+          bottom: 10px; 
+          display: flex; 
+          justify-content: center;
+          left: 10%; 
+          right: 10%;          
+        }
+        .card_height
+        {
+          height: 200px;
+        }
+        .resized-image {
+          max-width: 100%;
+        }
+        .carousel_style {
+          color: #D72638;
+        }
+      </style>
+    </head>
+    <body>
+      <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #011627;">
+        <a class="font navbar-brand col-sm-8" href="/">Diabetes Detection Web-App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about_diabetes">About Diabetes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/working">Working</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/userinput">Test</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/OurTeam">OurTeam</a>
+            </li>
+          </ul>
+        </div> 
+      </nav>
+
+     <div class="row top_pad" style="padding-top: 120px; padding-left: 30px; padding-right: 30px; display: flex; vertical-align: middle;" class="row">
+        <div class="col-lg-3" style="padding-bottom: 20px;">
+          <div class="card">
+            <a href="/about_diabetes">
+              <img style="border-radius: 0px;" src="{{ url_for('static',filename = 'about.png') }}" class="card-img-top" alt="About diabetes">
+            </a>
+            <div class="card-body card_height">
+              <br>
+              <h5 class="card-text">Get some in-depth knowledge about diabetes and why you should take this test.</h5>
+              <a href="/about_diabetes" class="button_padding font btn" style="background-color: white; border-width: 1px; border-radius: 50px; border-color: black;">About Diabetes</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3" style="padding-bottom: 20px;">
+          <div class="card">
+            <a href="/working">
+              <img style="border-radius: 0px;" src="{{ url_for('static',filename = 'working.png') }}" class="card-img-top" alt="Working">
+            </a>
+            <div class="card-body card_height">
+              <br>
+              <h5 class="card-text">Get to know about how this test works.</h5>
+              <a href="/working" class="button_padding font btn" style="background-color: white; border-width: 1px; border-radius: 50px; border-color: black;">Working</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3" style="padding-bottom: 20px;">
+          <div class="card">
+            <a href="/userinput">
+              <img style="border-radius: 0px;" src="{{ url_for('static',filename = 'test.png') }}" class="card-img-top" alt="Test">
+            </a>
+              <div class="card-body card_height">
+                <br>
+              <h5 class="card-text">Proceed here to directly take the Test.</h5>
+              <a href="/userinput" class="button_padding font btn" style="background-color: white; border-width: 1px; border-radius: 50px; border-color: black;">Test</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3" style="padding-bottom: 20px;">
+          <div class="card">
+            <a href="/OurTeam">
+              <img style="border-radius: 0px;" src="{{ url_for('static',filename = 'ourteam.jpg') }}" class="card-img-top" alt="OurTeam">
+            </a>
+            <div class="card-body card_height">
+              <br>
+              <h5 class="card-text">Information about the developers of this Web-App.</h5>
+              <a href="/OurTeam" class="btn font button_padding" style="background-color: white; border-width: 1px; border-radius: 50px; border-color: black;">Our Team</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      </body>
+
+</html>

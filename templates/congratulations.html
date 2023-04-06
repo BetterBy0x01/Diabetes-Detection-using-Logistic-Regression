@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Congratulations!</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{{ url_for('static',filename = 'icon.png') }}" type="image/icon type">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.typekit.net/txt6qtg.css">
+        <style>
+            .banner_font
+            {
+                font-size: 37px;
+            }
+            .emoji_font{
+                font-size: 28px;
+            }
+            .text_font
+            {
+                font-size: 20px;
+            }
+            .sub_text_font
+            {
+                font-size: 25px;
+            }
+            @media only screen and (min-width: 820px) {
+            .banner_font
+            {
+                font-size: 60px;
+            }
+            .emoji_font{
+                font-size: 60px;
+            }
+            .text_font
+            {
+                font-size: 22px;
+            }
+            .sub_text_font
+            {
+                font-size: 25px;
+            }
+            }
+            @media only screen and (min-width: 1080px) {
+            .nav_space {
+                margin-left: 55%;
+            }
+            }
+        .bg
+        {
+            padding-top: 250px;
+            background-color: #011627;
+            background-image: url("{{ url_for('static',filename = 'confetti.gif') }}");
+            background-color: #FCFEFC;
+            background-repeat: repeat-x;
+            font-family: raleway,sans-serif;
+            font-weight: 300;
+            font-style: bold;
+        }
+        .font_heading
+        {
+          font-family: raleway,sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            color: #D72638; 
+        }
+        #logo
+        {
+            padding-top: 300px;
+            padding-bottom: 25px;
+            background-size: cover;
+            font-family: raleway,sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+        .text
+        {
+            color: white; 
+            vertical-align: middle; 
+            display: flex; 
+            justify-content: center;
+        }
+        .bgnav
+        {
+          display: flex; background-size: cover; background-image: url(login.png);
+        }
+        .button_padding
+        {
+          min-width: 150px;
+        }
+        .padding{
+            margin-left: 12%;
+            margin-right: 12%;
+
+        }
+        .font_body{
+            font-weight: 450;
+            font-family: sans-serif;
+            font-size: 20px;
+            text-align: left;
+            color: black;
+        }
+      </style>
+    </head>
+    <body class="bg">
+        <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #011627; padding-left: 5%;">
+            <a class="font navbar-brand" href="/">Diabetes Detection Web-App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav nav_space">
+            <li class="nav-item">
+              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="white-space: nowrap;" href="/about_diabetes">About Diabetes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/working">Working</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/userinput">Test</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/OurTeam">OurTeam</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container" style="padding-left: 5%; padding-right: 5%;">
+            <b></b><h1 class="banner_font">Congratulations! <b class="emoji_font" >🎊 🎉</b></h1></b>
+            <p class="lead text_font">After analysing the prediction model, we can assure you that it is highly unlikely of you to have diabetes. </p>
+            <h5 class="sub_text_font">Enjoy! 🤜 🤛</h5>
+        </div>
+      </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      
+    </body>
+      
+</html>
