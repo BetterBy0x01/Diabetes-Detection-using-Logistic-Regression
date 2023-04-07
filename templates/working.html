@@ -1,90 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>OurTeam</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="{{ url_for('static',filename = 'icon.png') }}" type="image/icon type">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.typekit.net/txt6qtg.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-        .font_heading
-        {
-          font-family: raleway,sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            color: #D72638; 
-        }
-        .img{
-            height: 112px;
-            width: 110px;
-        }
-        #logo
-        {
-            padding-top: 300px;
-            padding-bottom: 25px;
-            background-size: cover;
-            font-family: raleway,sans-serif;
-            font-weight: 300;
-            font-style: normal;
-        }
-        .text
-        {
-            color: white; 
-            vertical-align: middle; 
-            display: flex; 
-            justify-content: center;
-        }
-        .bgnav
-        {
-          display: flex; background-size: cover; background-image: url(login.png);
-        }
-        .button_padding
-        {
-          min-width: 150px;
-        }
-        .padding{
-            padding-right: 0px;
-            padding-left: 0px;
-        }
-        .font_body{
-            font-weight: 450;
-            font-family: sans-serif;
-            font-size: 15px;
-            text-align: left;
-            color: black;
-        }
-      </style>
-    </head>
-    <body>
-      <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #011627;">
-        <a class="font navbar-brand col-sm-8" href="/">Diabetes Detection Web-App</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about_diabetes">About Diabetes</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/working">Working</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/userinput">Test</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/OurTeam">OurTeam</a>
-            </li>
-          </ul>
+
+<head>
+  <title>OurTeam</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{{ url_for('static',filename = 'icon.png') }}" type="image/icon type">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.typekit.net/txt6qtg.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- MathJaX-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+  <style>
+    body {
+      animation: transitionIn 0.75s;
+    }
+
+    @keyframes transitionIn {
+      from {
+        opacity: 0;
+        transform: rotateX(-10deg)
+      }
+
+      to {
+        opcaity: 1;
+        transform: rotateX(0);
+      }
+    }
+
+    .list_padding {
+      margin-left: 12%;
+      margin-right: 12%;
+    }
+
+    .video_dim {
+      width: 356px;
+      height: 200px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media only screen and (min-width: 820px) {
+      .list_padding {
+        margin-left: 15%;
+        margin-right: 15%;
+      }
+
+      .video_dim {
+        width: 800px;
+        height: 450px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media only screen and (min-width: 1080px) {
+      .nav_space {
+        margin-left: 55%;
+      }
+    }
+
+    .font_heading {
+      font-family: raleway, sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      color: #D72638;
+    }
+
+    #logo {
+      padding-top: 300px;
+      padding-bottom: 25px;
+      background-size: cover;
+      font-family: raleway, sans-serif;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    .text {
+      color: white;
+      vertical-align: middle;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bgnav {
+      display: flex;
+      background-size: cover;
+      background-image: url(login.png);
+    }
+
+    .button_padding {
+      min-width: 150px;
+    }
+
+    .padding {
+      margin-left: 12%;
+      margin-right: 12%;
+
+    }
+
+    .body_padding {
+      margin-left: 5%;
+      margin-right: 5%;
+
+    }
+
+    .keyConcepts {
+      color: #4effd6;
+    }
+
+    .font_body {
+      font-weight: 450;
+      font-family: sans-serif;
+      font-size: 20px;
+      text-align: left;
+      color: white;
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .hideScroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .hideScroll {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+  </style>
+</head>
+
+<body class="hideScroll" style="background-color: black;">
+  <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: black">
+    <a class="font navbar-brand col-sm-8" href="/">Diabetes Detection Web-App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about_diabetes">About Diabetes</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/working">Working</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/userinput">Test</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/OurTeam">OurTeam</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col-lg-12" style="padding-top: 80px; text-align: center; ">
+      <h1 class="font_heading"
+        style="color: white; background-color: #D72638 ; padding: 10px 10px; display: inline; border-radius: 5px;">
+        <b>Working</b>
+      </h1>
+    </div>
+  </div>
+  <br>
+  <div class="row padding font_body" style="text-align: center;">
+    <p>
+      Diabetes is a chronic condition in which the body develops a resistance to insulin, a hormone which converts food
+      into glucose. Diabetes affect many people worldwide and is normally divided into Type 1 and Type 2 diabetes. Both
+      have different characteristics. Here in this web application, we analyze the <b>PIMA Indian Diabetes dataset</b>
+      <small style="color: #727980;">(<a href="https://www.kaggle.com/uciml/pima-indians-diabetes-database"
+          target="_blank">view dataset</a>)</small> to predict if a person is at a risk of developing diabetes,
+      given the independent factors.
+    </p>
+    <p> A lot of research has happened on the non-invasive automated detection of diabetes using machine learning
+      techniques. Machine learning was employed based on steps of feature extraction, feature selection and
+      classification. </p>
+    <p>
+      <br> Here we use the Logistic Regression to do so.
+    </p>
+  </div>
+
+  <div class="row padding">
+    <div class="font_heading">
+      <p style="font-size: 23px">About Logistic Regression</p>
+      <div class="row body_padding font_body">
+        <p>
+          Logistic Regression is a statistical method used for binary classification, which is the process of predicting
+          the class or category of an input based on its features. It is a type of supervised machine learning algorithm
+          that is commonly used for solving problems such as spam detection, medical diagnosis, fraud detection, and
+          customer churn prediction.</p>
+        <p>
+          In logistic regression, the goal is to model the relationship between a set of input features (also called
+          predictors, independent variables, or features) and a binary outcome variable (also called the dependent
+          variable or response variable) that can take one of two possible values, usually represented as 0 and 1. The
+          binary outcome variable is often referred to as the "class" or "label", where 0 typically represents the
+          negative class and 1 represents the positive class.
+        </p>
+        <p>
+          The main idea behind logistic regression is to use the input features to model the probability of the binary
+          outcome variable belonging to a certain class using a logistic function, also known as a sigmoid function. The
+          sigmoid function maps any input value to a probability value between 0 and 1, which represents the likelihood
+          of the input belonging to the positive class.
+        </p>
+        <p>
+          The logistic function is defined as: \( f(z) = \frac{1}{1 + e^{-z}} \)
+        </p>
+        <p>
+          where f(z) is the output probability, z is the linear combination of the input features and their associated
+          weights, and e is the base of the natural logarithm.
+        </p>
+        <p>
+          The logistic regression algorithm uses a training dataset with labeled examples to estimate the optimal values
+          of the weights that minimize a predefined loss or cost function, such as cross-entropy or log loss. These
+          optimized weights are then used to make predictions on new, unseen data.
+        </p>
+
+        Some key concepts in logistic regression include:
+        <ol>
+          <li>
+            <b class="keyConcepts">Log-odds</b>: The log-odds, also known as the logit, is the logarithm of the odds of
+            the binary outcome variable being in the positive class. It is used to model the relationship between the
+            input features and the binary outcome variable.
+          </li>
+          <li>
+            <b class="keyConcepts">Maximum Likelihood Estimation (MLE)</b>: Logistic regression uses the maximum
+            likelihood estimation to estimate the optimal values of the weights that maximize the likelihood of the
+            observed data.
+          </li>
+          <li>
+            <b class="keyConcepts">Decision boundary</b>: The decision boundary is the threshold used to classify input
+            examples into either the positive or negative class. It is typically determined by the value of the sigmoid
+            function output, with values above the threshold classified as positive class and values below the threshold
+            classified as negative class.
+          </li>
+          <li>
+            <b class="keyConcepts">Regularization</b>: Logistic regression can also include regularization techniques
+            such as L1 or L2 regularization to prevent overfitting and improve model generalization.
+          </li>
+        </ol>
+        Logistic regression is a widely used and interpretable algorithm for binary classification problems, and it
+        serves as a foundation for more complex machine learning models such as multinomial logistic regression, which
+        can handle multi-class classification problems.
+        </p>
+        <p>
+          <br>
+          To know more about Logistic Regression refer this video.
+          <small id="passwordHelpBlock" class="form-text text-muted">
+            courtesy: <a href="https://youtu.be/yIYKR4sgzI8" target="_blank">StatQuest with
+              Josh Starmer</a>
+          </small>
+        </p>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  <div style="padding-bottom: 35px;">
+    <iframe class="video_dim" src="https://www.youtube.com/embed/yIYKR4sgzI8" title="StatQuest: Logistic Regression"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <!-- <iframe class="video_dim" src="https://www.youtube-nocookie.com/embed/J4Wdy0Wc_xQ" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe> -->
+  </div>
+
+
+  <div class="row padding">
+    <div class="font_heading">
+      <p style="font-size: 23px">Parameters Considered</p>
+      <div class="font_body">
+        <p>The following parameters are considered in our prediction model</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="list-group list_padding" style="padding-bottom: 100px;">
+    <a href="" class="list-group-item list-group-item-action" style="background-color: #EAECEF;" onclick="return false">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Number Of Pregnancies</h5>
+      </div>
+      <p class="mb-1">In a Range of 0-17</p>
+    </a>
+    <a href="" class="list-group-item list-group-item-action" onclick="return false"">
+            <div class=" d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Glucose Level</h5>
+  </div>
+  <p class="mb-1">In a Range of 0-199</p>
+  </a>
+  <a href="" class="list-group-item list-group-item-action" style="background-color: #EAECEF;" onclick="return false">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Blood Pressure</h5>
+    </div>
+    <p class="mb-1">In a Range of 0-122</p>
+  </a>
+  <a href="" class="list-group-item list-group-item-action" onclick="return false"">
+            <div class=" d-flex w-100 justify-content-between">
+    <h5 class="mb-1">Skin Thickness</h5>
+    </div>
+    <p class="mb-1">In a Range of 0-99</p>
+  </a>
+  <a href="" class="list-group-item list-group-item-action" style="background-color: #EAECEF;" onclick="return false">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Insulin value</h5>
+    </div>
+    <p class="mb-1">In a Range of 0-846</p>
+  </a>
+  <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/english_bmi_calculator/bmi_calculator.html"
+    target="_blank" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Body mass index (BMI)</h5>
+    </div>
+    <p class="mb-1">In a Range of 0.0-67.1</p>
+    <small class="text-muted">Click to calulate BMI</small>
+  </a>
+  <a href="" target="_blank" data-toggle="modal" data-target="#exampleModal" style="background-color: #EAECEF;"
+    class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Diabetes Pedigree Function (DPF)</h5>
+    </div>
+    <p class="mb-1">In a Range of 0.078-2.42</p>
+    <small class="text-muted">Click to view formula to calculate your DPF value.</small>
+  </a>
+  <a href="" class="list-group-item list-group-item-action" onclick="return false">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Age</h5>
+    </div>
+    <p class="mb-1">In a Range of 21-81</p>
+  </a>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Diabetes Pedigree Function</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-      </nav>
-      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>       
-    </body>
+        <div class="modal-body">
+          <img src="{{ url_for('static',filename = 'dpf_def.png') }}" alt="DPF definition"
+            style="height: 80%; width: 80%">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+            style="border-radius: 50px;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

@@ -8,6 +8,22 @@
         <link rel="stylesheet" href="https://use.typekit.net/txt6qtg.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
+
+        body {
+          animation: transitionIn 0.75s;
+        }
+
+        @keyframes transitionIn {
+          from {
+            opacity: 0;
+            transform: rotateX(-10deg)
+          }
+          to {
+            opcaity: 1;
+            transform: rotateX(0);
+          }
+        }
+
         *{
             margin: 0;
             padding: 0;
@@ -80,7 +96,7 @@
         <video autoplay loop muted plays-inline class="back-video">
             <source src="../static/video.mp4", type="video/mp4">
         </video>
-        <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #011627;">
+        <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: transparent">
             <a class="font navbar-brand col-sm-8" href="/">Diabetes Detection Web-App</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

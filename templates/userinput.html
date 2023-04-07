@@ -36,6 +36,22 @@
             }
         }
 
+        body {
+            animation: transitionIn 0.75s;
+        }
+
+        @keyframes transitionIn {
+            from {
+                opacity: 0;
+                transform: rotateX(-10deg)
+            }
+
+            to {
+                opcaity: 1;
+                transform: rotateX(0);
+            }
+        }
+
         .font_heading {
             font-family: raleway, sans-serif;
             font-style: normal;
@@ -84,7 +100,7 @@
             font-family: sans-serif;
             font-size: 15px;
             text-align: left;
-            color: black;
+            color: white;
         }
 
         .round_border {
@@ -99,11 +115,28 @@
             min-width: 95px;
             margin-right: 15px;
         }
+
+        .userInputLabel {
+            color: white;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .hideScroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .hideScroll {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
     </style>
 </head>
 
-<body>
-    <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #011627;">
+<body class="hideScroll" style="background-color: black">
+    <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: black;">
         <a class="font navbar-brand col-sm-8" href="/">Diabetes Detection Web-App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -129,144 +162,154 @@
             </ul>
         </div>
     </nav>
-    <div class="row">
-        <div class="col-lg-12" style="padding-top: 80px; text-align: center;">
-            <h1 class="font_heading"
-                style="color: white; background-color: #D72638 ; padding-top: 7px; padding-bottom: 7px; margin-right: 7%; margin-left: 7%;">
-                <b>Test</b></h1>
-            <br>
-        </div>
-    </div>
-
-    <div class="row padding">
-        <div class="font_heading col-lg-12" style="text-align: center;">
-            <p style="font-size: 23px">Fill the Following form to the best of your knowledge:</p>
-        </div>
-    </div>
-
-    <form class="padding" method="POST" action="/userinput">
-        <div class="form-group">
-            <label>Number Of Pregnancies</label>
-            <input type="number" class="form-control round_border" min="0" max="17" name="pregnancies"
-                placeholder="Input or Choose">
-        </div>
-
-        <div class="form-group">
-            <label for="formControlRange">Choose Glucose Level using slider (0-199) </label>
-            <small id="passwordHelpBlock" class="form-text text-muted">
-                Value displayed beside slider, use arrow keys for precision.
-            </small>
-            <div class="container row ">
-                <input type="range" class="form-control-range sliders col-sm-10" min="0" max="199" step="1"
-                    id="formControlRange1" onchange="updateTextBox1(this.value);"> <br>
-                <input type="number" name="glucose" min="0" max="199" class="round_border thin_borders col-sm-1"
-                    id="slider1" value="">
+    <div style="background-color: black">
+        <div class="row">
+            <div class="col-lg-12" style="padding-top: 80px; text-align: center;">
+                <h1 class="font_heading"
+                    style="color: white; background-color: #D72638; padding: 10px 10px; display: inline; border-radius: 5px;">
+                    <b>Test Your Diabetes</b>
+                </h1>
+                <br>
+                <br>
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="formControlRange">Choose Blood Pressure value using slider (0-122) </label>
-            <small id="passwordHelpBlock" class="form-text text-muted">
-                Value displayed beside slider, use arrow keys for precision.
-            </small>
-            <div class="container row ">
-                <input type="range" class="form-control-range sliders col-sm-10" min="0" max="122" step="1"
-                    id="formControlRange2" onchange="updateTextBox2(this.value);"> <br>
-                <input type="number" name="blood_pressure" min="0" max="122" class="round_border thin_borders col-sm-1"
-                    id="slider2" value="">
+        <div class="row padding">
+            <div class="font_heading col-lg-12" style="text-align: center;">
+                <p style="font-size: 23px">Fill the Following form to the best of your knowledge:</p>
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="formControlRange">Choose Skin Thickness value using slider (0-99) </label>
-            <small id="passwordHelpBlock" class="form-text text-muted">
-                Value displayed beside slider, use arrow keys for precision.
-            </small>
-            <div class="container row ">
-                <input type="range" class="form-control-range sliders col-sm-10" min="0" max="99" step="1"
-                    id="formControlRange3" onchange="updateTextBox3(this.value);"> <br>
-                <input type="number" name="skin_thickness" min="0" max="99" class="round_border thin_borders col-sm-1"
-                    id="slider3" value="">
+        <form class="padding" method="POST" action="/userinput">
+            <div class="form-group">
+                <label class="userInputLabel">Number Of Pregnancies</label>
+                <input type="number" class="form-control round_border" min="0" max="17" name="pregnancies"
+                    placeholder="Input or Choose">
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="formControlRange">Choose Insulin value using slider (0-846) </label>
-            <small id="passwordHelpBlock" class="form-text text-muted">
-                Value displayed beside slider, use arrow keys for precision.
-            </small>
-            <div class="container row ">
-                <input type="range" class="form-control-range sliders col-sm-10" min="0" max="846" step="1"
-                    id="formControlRange4" onchange="updateTextBox4(this.value);"> <br>
-                <input type="number" name="insulin" min="0" max="846" class="round_border thin_borders col-sm-1"
-                    id="slider4" value="">
+            <div class="form-group">
+                <label class="userInputLabel" for="formControlRange">Choose Glucose Level using slider (0-199) </label>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    Value displayed beside slider, use arrow keys for precision.
+                </small>
+                <div class="container row ">
+                    <input type="range" class="form-control-range sliders col-sm-10" min="0" max="199" step="1"
+                        id="formControlRange1" onchange="updateTextBox1(this.value);"> <br>
+                    <input type="number" name="glucose" min="0" max="199" class="round_border thin_borders col-sm-1"
+                        id="slider1" value="">
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="formControlRange">Choose Body mass index (BMI) value using slider (0.0-67.1) </label>
-            <small id="passwordHelpBlock" class="form-text text-muted">
-                Use this <a
-                    href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/english_bmi_calculator/bmi_calculator.html"
-                    target="_blank">link</a> to calculate your BMI value.
-                Value displayed beside slider, use arrow keys for precision.
-            </small>
-            <div class="container row ">
-                <input type="range" class="form-control-range sliders col-sm-10" min="0.0" max="67.1" step="0.1"
-                    id="formControlRange5" onchange="updateTextBox5(this.value);"> <br>
-                <input type="number" name="BMI" min="0.0" max="67.1" step="0.1"
-                    class="round_border thin_borders col-sm-1" id="slider5" value="">
+            <div class="form-group">
+                <label class="userInputLabel" for="formControlRange">Choose Blood Pressure value using slider (0-122)
+                </label>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    Value displayed beside slider, use arrow keys for precision.
+                </small>
+                <div class="container row ">
+                    <input type="range" class="form-control-range sliders col-sm-10" min="0" max="122" step="1"
+                        id="formControlRange2" onchange="updateTextBox2(this.value);"> <br>
+                    <input type="number" name="blood_pressure" min="0" max="122"
+                        class="round_border thin_borders col-sm-1" id="slider2" value="">
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="formControlRange">Choose Diabetes Pedigree Function (DPF) value using slider (0.078-2.42)
-            </label>
-            <small id="passwordHelpBlock" class="form-text text-muted">
-                <!-- trigger modal -->
-                Use this <a href="" target="_blank" data-toggle="modal" data-target="#exampleModal">link</a> to
-                calculate your DPF value. Value displayed beside slider, use arrow keys for precision.
+            <div class="form-group">
+                <label class="userInputLabel" for="formControlRange">Choose Skin Thickness value using slider (0-99)
+                </label>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    Value displayed beside slider, use arrow keys for precision.
+                </small>
+                <div class="container row ">
+                    <input type="range" class="form-control-range sliders col-sm-10" min="0" max="99" step="1"
+                        id="formControlRange3" onchange="updateTextBox3(this.value);"> <br>
+                    <input type="number" name="skin_thickness" min="0" max="99"
+                        class="round_border thin_borders col-sm-1" id="slider3" value="">
+                </div>
+            </div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Diabetes Pedigree Function</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="{{ url_for('static',filename = 'dpf_def.png') }}" alt="DPF definition" style="height: 80%; width: 80%">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                                    style="border-radius: 50px;">Close</button>
+            <div class="form-group">
+                <label class="userInputLabel" for="formControlRange">Choose Insulin value using slider (0-846) </label>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    Value displayed beside slider, use arrow keys for precision.
+                </small>
+                <div class="container row ">
+                    <input type="range" class="form-control-range sliders col-sm-10" min="0" max="846" step="1"
+                        id="formControlRange4" onchange="updateTextBox4(this.value);"> <br>
+                    <input type="number" name="insulin" min="0" max="846" class="round_border thin_borders col-sm-1"
+                        id="slider4" value="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="userInputLabel" for="formControlRange">Choose Body mass index (BMI) value using slider
+                    (0.0-67.1) </label>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    Use this <a
+                        href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/english_bmi_calculator/bmi_calculator.html"
+                        target="_blank">link</a> to calculate your BMI value.
+                    Value displayed beside slider, use arrow keys for precision.
+                </small>
+                <div class="container row ">
+                    <input type="range" class="form-control-range sliders col-sm-10" min="0.0" max="67.1" step="0.1"
+                        id="formControlRange5" onchange="updateTextBox5(this.value);"> <br>
+                    <input type="number" name="BMI" min="0.0" max="67.1" step="0.1"
+                        class="round_border thin_borders col-sm-1" id="slider5" value="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="userInputLabel" for="formControlRange">Choose Diabetes Pedigree Function (DPF) value using
+                    slider (0.078-2.42)
+                </label>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    <!-- trigger modal -->
+                    Use this <a href="" target="_blank" data-toggle="modal" data-target="#exampleModal">link</a> to
+                    calculate your DPF value. Value displayed beside slider, use arrow keys for precision.
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Diabetes Pedigree Function</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{{ url_for('static',filename = 'dpf_def.png') }}" alt="DPF definition"
+                                        style="height: 80%; width: 80%">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                        style="border-radius: 50px;">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </small>
+                <div class="container row ">
+                    <input type="range" class="form-control-range sliders col-sm-10" min="0.078" max="2.42" step="0.01"
+                        id="formControlRange6" onchange="updateTextBox6(this.value);"> <br>
+                    <input type="number" name="DPF" min="0.078" max="2.42" step="0.01"
+                        class="round_border thin_borders col-sm-1" id="slider6" value="">
                 </div>
-            </small>
-            <div class="container row ">
-                <input type="range" class="form-control-range sliders col-sm-10" min="0.078" max="2.42" step="0.01"
-                    id="formControlRange6" onchange="updateTextBox6(this.value);"> <br>
-                <input type="number" name="DPF" min="0.078" max="2.42" step="0.01"
-                    class="round_border thin_borders col-sm-1" id="slider6" value="">
             </div>
-        </div>
 
-        <div class="form-group">
-            <label>Age: </label>
-            <input type="number" class="form-control round_border" min="21" max="81" name="age"
-                placeholder="Input or Choose">
-        </div>
+            <div class="form-group">
+                <label class="userInputLabel">Age: </label>
+                <input type="number" class="form-control round_border" min="21" max="81" name="age"
+                    placeholder="Input or Choose">
+            </div>
 
-        <button type="submit" class="btn btn-success" style="border-radius: 50px; min-width: 150px;"
-            href="/home">Submit</button>
-    </form>
-
+            <button type="submit" class="btn btn-success" style="border-radius: 50px; min-width: 150px;"
+                href="/home">Submit</button>
+        </form>
+    </div>
+    <br>
+    <br>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -279,4 +322,5 @@
         crossorigin="anonymous"></script>
 
 </body>
+
 </html>

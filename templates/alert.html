@@ -24,6 +24,19 @@
             		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
             	}
             }
+        body {
+          animation: transitionIn 0.75s;
+        }
+        @keyframes transitionIn {
+          from {
+            opacity: 0;
+            transform: rotateX(-10deg)
+          }
+          to {
+            opcaity: 1;
+            transform: rotateX(0);
+          }
+        }
             .bg
             {
                 padding-top: 130px;
@@ -135,7 +148,7 @@
       </style>
     </head>
     <body class="bg">
-        <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #011627; padding-left: 5%;">
+        <nav class="font_heading navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: black; padding-left: 5%;">
             <a class="font navbar-brand" href="/">Diabetes Detection Web-App</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
