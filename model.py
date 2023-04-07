@@ -1,23 +1,24 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-# from sklearn.ensemble import 
-# from sklearn.model_selection import LogisticRegression
-from sklearn.linear_model import LogisticRegression
-import matplotlib.pyplot as plt
-
-df = pd.read_csv('C:/Users/ronak/Desktop/flask/diabetes.csv')
-X = df.iloc[:, 0:8].values
-Y = df.iloc[:, -1].values
-X_train, X_test, Y_train, Y_test = train_test_split(
-    X, Y, test_size=0.25, random_state=0)
-lr = LogisticRegression()
-lr.fit(X_train, Y_train)
-plt.plot(X, lr.predict(X))
-
 import joblib
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import RobustScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
 
-joblib.dump(lr,"model.pkl")
+dataset = pd.read_csv('/home/betterby0x01/Diabetes-Detection/diabetes.csv')
 
-m = joblib.load("model.pkl")
-# m.predict([[2]])
+X = dataset.iloc[:,:-1]
+Y = dataset.iloc[:,-1]
+
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.25, random_state = 0)
+
+sc = RobustScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
+
+model= LogisticRegression()
+model.fit(X_train, Y_train)
+
+Y_pred = model.predict(X_test)
+
+joblib.dump(model,"model.pkl")
