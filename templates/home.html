@@ -21,7 +21,7 @@
       }
 
       to {
-        opcaity: 1;
+        opacity: 1;
         transform: rotateX(0);
       }
     }
@@ -39,27 +39,6 @@
       font-style: normal;
     }
 
-    #logo {
-      padding-top: 300px;
-      padding-bottom: 25px;
-      background-size: cover;
-      font-family: raleway, sans-serif;
-      font-weight: 300;
-      font-style: normal;
-    }
-
-    .text {
-      color: white;
-      vertical-align: middle;
-      display: flex;
-      justify-content: center;
-    }
-
-    .bgnav {
-      display: flex;
-      background-size: cover;
-    }
-
     .button_padding {
       min-width: 150px;
       position: absolute;
@@ -72,14 +51,6 @@
 
     .card_height {
       height: 210px;
-    }
-
-    .resized-image {
-      max-width: 100%;
-    }
-
-    .carousel_style {
-      color: #D72638;
     }
 
     /* Hide scrollbar for Chrome, Safari and Opera */
@@ -131,6 +102,8 @@
     <div class="col-lg-3" style="padding-bottom: 20px;">
       <div class="card">
         <a href="/about_diabetes">
+          <!-- It uses Flask's url_for function to generate a URL for a static file named "about.png" that is located in the application's "static" folder. 
+               This folder is typically used to store static assets such as images, stylesheets, and JavaScript files that do not change dynamically. -->
           <img style="border-radius: 0px;" src="{{ url_for('static',filename = 'about.png') }}" class="card-img-top"
             alt="About diabetes">
         </a>

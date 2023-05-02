@@ -7,12 +7,15 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.typekit.net/txt6qtg.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="mystyle.css"> -->
         <style>
 
+        /* body sets a transition effect for the whole page.*/
         body {
           animation: transitionIn 0.75s;
         }
 
+        /* @keyframes transitionIn defines a CSS animation for the transition effect. */
         @keyframes transitionIn {
           from {
             opacity: 0;
@@ -24,6 +27,7 @@
           }
         }
 
+        /* https://www.w3schools.com/css/css3_box-sizing.asp */
         *{
             margin: 0;
             padding: 0;
@@ -36,6 +40,7 @@
             font-weight: 400;
             color: #D72638; 
         }
+        /* linear-gradient() CSS function creates an image consisting of a progressive transition between two or more colors along a straight line. */
         .hero {
             width: 100%;
             height: 100vh;
@@ -74,6 +79,8 @@
             bottom: 0;
             z-index: -1;
         }
+
+        /* @media sets different styles for different screen sizes. */
         @media (min-aspect-ratio: 16/9) {
             .back-video{
                 width: 100%;

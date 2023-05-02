@@ -1,15 +1,23 @@
 from flask import Flask, render_template, request
+
+# Serialization refers to the process of converting a data object (e.g., Python objects, Tensorflow models) into a format that allows us to 
+# store or transmit the data and then recreate the object when needed using the reverse process of deserialization.
+
+# 'joblib' is a library for performing efficient serialization and deserialization of Python objects.
 import joblib
 import numpy as np
 
 app = Flask(__name__)
 
+# joblib.load() is used to deserialize the object from the file.
 model = joblib.load("model.pkl")
 
-
+# This line creates a route decorator using the @app.route() syntax, which maps the root URL (/) to the login() function. 
+# When a user visits the root URL, Flask calls the login() function, which renders a HTML template called welcome.html using the render_template() function.
+# The route() decorator in Flask is used to bind URL to a function
 @app.route('/')
 def login():
-    return render_template("login.html")
+    return render_template("welcome.html")
 
 
 @app.route('/home')
